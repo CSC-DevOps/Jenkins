@@ -11,6 +11,6 @@ $ tar -xvf jenkins.box -C ~/.bakerx/.persist/images/jenkins
 Provision jenkins server.
 
 ```bash
-$ bakerx run jenkins --ip 192.168.44.80 --memory 2048
+$ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
