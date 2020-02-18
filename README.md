@@ -1,6 +1,21 @@
 # Jenkins
 
-Hack to add jenkins image to bakerx registry.
+## Getting a Jenkins ready image.
+
+If using latest bakerx:
+```
+$ bakerx --version
+bakerx@0.6.8
+virtcrud@18ae833
+```
+
+Download jenkins image from Github Releases.
+
+```
+bakerx pull CSC-DevOps/Images#Spring2020 jenkins
+```
+
+Otherwise if you have not updated bakerx, use this hack to add jenkins image to the bakerx registry. Note, you will want to run in Git Bash if on Windows:
 
 ```bash
 $ mkdir -p ~/.bakerx/.persist/images/jenkins
