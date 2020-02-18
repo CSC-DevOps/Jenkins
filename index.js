@@ -1,43 +1,61 @@
 const jenkins = require('jenkins')({ baseUrl: 'http://admin:admin@192.168.44.80:8080', crumbIssuer: true, promisify: true });
 
 async function getBuildStatus(job, id) {
-    try {
-        let build = await jenkins.build.get(job, id);
-        return build.result;
-    } catch (err) {
-        console.error(err.message);
-        return false;
-    }
+    return new Promise(async function(resolve, reject)
+    {
+        console.log(`Fetching ${job}: ${id}`);
+        let result = await jenkins.build.get(job, id);
+        resolve(result);
+    });
 }
 
-async function waitForBuild(job, id, timeout) {
-    var start = Date.now();
+async function waitOnQueue(id) {
+    return new Promise(function(resolve, reject)
+    {
+        jenkins.queue.item(id, function(err, item) {
+            if (err) throw err;
+            // console.log('queue', item);
+            if (item.executable) {
+                console.log('number:', item.executable.number);
+                resolve(item.executable.number);
+            } else if (item.cancelled) {
+                console.log('cancelled');
+                reject('canceled');
+            } else {
+                setTimeout(async function() {
+                    resolve(await waitOnQueue(id));
+                }, 5000);
+            }
+        });
+    });
+  }
+  
 
-    while (true) {
-        try {
-            let build = await jenkins.build.get(job, id);
-            if (build.result) return true;
-            console.log('==> build is still running, waiting 200ms...')
-            await new Promise(resolve => setTimeout(resolve, 500));
-        } catch (err) {
-            console.error(err.message);
-            return false;
-        }
-        if (Date.now() - start > timeout) return false;
-    }
+async function triggerBuild(job) 
+{
+    let queueId = await jenkins.job.build(job);
+    let buildId = await waitOnQueue(queueId);
+    return buildId;
 }
 
-async function triggerBuild(job) {
-    try {
-        let item = await jenkins.job.build(job);
-        return item;
-    } catch (err) {
-        console.error(err.message);
-        return undefined;
-    }
+async function main()
+{
+
+    console.log('Triggering build.')
+    let buildId = await triggerBuild('test-pipeline').catch( e => console.log(e));
+
+    console.log(`Received ${buildId}`);
+    let build = await getBuildStatus('test-pipeline', buildId);
+    console.log( `Build result: ${build.result}` );
+
+    console.log(`Build output`);
+    let output = await jenkins.build.log({name: 'test-pipeline', number: buildId});
+    console.log( output );
+
 }
 
 (async () => {
-    let id = await triggerBuild('test-pipeline');
-    await waitForBuild('test-pipeline', id, 600)
+
+    await main();
+
 })()
