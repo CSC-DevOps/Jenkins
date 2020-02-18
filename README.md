@@ -14,7 +14,7 @@ Provision jenkins server.
 $ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
-Visit http://192.168.44.80:8080.
+➡️ Visit http://192.168.44.80:8080.
 
 ![Unlock](imgs/Unlock.png)
 
