@@ -21,7 +21,7 @@ $ baker ssh jenkins
 vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-### Exploring Jenkins
+## Exploring Jenkins
 
 ➡️ Visit http://192.168.44.80:8080.
 
@@ -29,6 +29,10 @@ vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![Plugins](imgs/Plugins.png)
 
+### Jenkins > Home Page
+
 ![Jenkins](imgs/Jenkins-HomePage.png)
+
+### Jenkins > Project Types
 
 ![Projects](imgs/Jenkins-Projects.png)
