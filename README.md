@@ -55,3 +55,22 @@ vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ### Jenkins > Project Types
 
 ![Projects](imgs/Jenkins-Projects.png)
+
+
+### Creating a Freestyle Project
+
+
+### Using Jenkins Job Builder
+
+```bash
+vagrant@ubuntu-bionic:~$ jenkins-jobs --user admin --password admin update test-pipeline.yml 
+WARNING:jenkins_jobs.config:Config file, /etc/jenkins_jobs/jenkins_jobs.ini, not found. Using default config values.
+INFO:jenkins_jobs.cli.subcommand.update:Updating jobs in ['test-pipeline.yml'] ([])
+INFO:jenkins_jobs.builder:Number of jobs generated:  1
+INFO:jenkins_jobs.builder:Creating jenkins job test-pipeline
+INFO:jenkins_jobs.cli.subcommand.update:Number of jobs updated: 1
+INFO:jenkins_jobs.builder:Number of views generated:  0
+INFO:jenkins_jobs.cli.subcommand.update:Number of views updated: 0
+```
+
+![Pipeline-StageView](imgs/Pipeline-StageView.png)
