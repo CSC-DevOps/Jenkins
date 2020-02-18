@@ -59,6 +59,20 @@ vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ### Creating a Freestyle Project
 
+Enter the following, inside Build > Add Build Step [Execute Shell]:
+
+```
+git clone https://github.com/CSC-DevOps/App
+cd App
+npm install
+npm test
+```
+
+Hit `Save` on the bottom of the page. 
+
+Next, on the project home page, manually trigger a build by clicking "Build Now".
+
+![BuildHistory](imgs/BuildHistory.png)
 
 ### Using Jenkins Job Builder
 
