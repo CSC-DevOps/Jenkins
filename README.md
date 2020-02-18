@@ -14,3 +14,8 @@ Provision jenkins server.
 $ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
+Get initial admin 
+```
+$ baker ssh jenkins
+vagrant@jenkins $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
