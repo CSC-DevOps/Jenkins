@@ -59,7 +59,9 @@ vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ### Creating a Freestyle Project
 
-Enter the following, inside Build > Add Build Step [Execute Shell]:
+On the Jenkins Home Page click Jenkins > New Item. Enter a project name "free", then select Free Style Project, then click "Ok" on the bottom of the page.
+
+Once the project is created, enter the following, inside Build > Add Build Step [Execute Shell]:
 
 ```
 git clone https://github.com/CSC-DevOps/App
