@@ -1,6 +1,8 @@
 # Jenkins
 
-## Getting a Jenkins ready image.
+## Setup
+
+### Getting a Jenkins ready image.
 
 If using latest bakerx:
 ```
@@ -15,7 +17,7 @@ Download jenkins image from Github Releases.
 bakerx pull CSC-DevOps/Images#Spring2020 jenkins
 ```
 
-Otherwise if you have not updated bakerx, use this hack to add jenkins image to the bakerx registry. Note, you will want to run in Git Bash if on Windows:
+🚧 Otherwise, if you have not updated bakerx, use this hack to add jenkins image to the bakerx registry. *Note*: you will want to run in Git Bash if on Windows:
 
 ```bash
 $ mkdir -p ~/.bakerx/.persist/images/jenkins
@@ -23,7 +25,9 @@ $ wget https://github.com/CSC-DevOps/Images/releases/download/Spring2020/jenkins
 $ tar -xvf jenkins.box -C ~/.bakerx/.persist/images/jenkins
 ```
 
-Provision jenkins server.
+### Provision jenkins server.
+
+Now that we have an image, let's provision a VM.
 
 ```bash
 $ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
