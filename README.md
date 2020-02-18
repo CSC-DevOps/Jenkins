@@ -18,7 +18,7 @@ Get initial admin password.
 
 ```
 $ baker ssh jenkins
-vagrant@jenkins $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 ### Exploring Jenkins
@@ -27,3 +27,8 @@ vagrant@jenkins $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 ![Unlock](imgs/Unlock.png)
 
+![Plugins](imgs/Plugins.png)
+
+![Jenkins](imgs/Jenkins-HomePage.png)
+
+![Projects](imgs/Jenkins-Projects.png)
