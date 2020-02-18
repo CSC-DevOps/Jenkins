@@ -14,16 +14,16 @@ Provision jenkins server.
 $ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
-### Exploring Jenkins
-
-➡️ Visit http://192.168.44.80:8080.
-
-![Unlock](imgs/Unlock.png)
-
 Get initial admin password.
 
 ```
 $ baker ssh jenkins
 vagrant@jenkins $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
+
+### Exploring Jenkins
+
+➡️ Visit http://192.168.44.80:8080.
+
+![Unlock](imgs/Unlock.png)
 
