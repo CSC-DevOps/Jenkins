@@ -1,13 +1,15 @@
 # Jenkins
 
+In this short workshop, we'll learn about Jenkins, 
+
 ## Setup
 
 ### Getting a Jenkins ready image.
 
-🚧 Download jenkins image from Github Releases. This is a larger download, so be prepared to wait a few minutes. You also may want to run this step in another terminal...
+🚧 Download jenkins image from Github Releases. This is a larger download (1.7GB), so be prepared to wait a few minutes. You also may want to run this step in another terminal...
 
 ``` bash | {type: 'command', stream: true}
-bakerx pull jenkins CSC-DevOps/Images#Spring2020 
+bakerx pull jenkins CSC-DevOps/Images#Spring2021
 ```
 
 ### Provision jenkins server.
@@ -18,7 +20,7 @@ Now that we have an image, let's provision a VM. Note that we are allocating a m
 bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
-Get initial admin password. Using the terminal, get into the VM `baker ssh jenkins`, and run:
+Get initial admin password. Using the terminal, get into the VM `bakerx ssh jenkins`, and run:
 
 ``` bash 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
@@ -65,6 +67,9 @@ Next, on the project home page, manually trigger a build by clicking "Build Now"
 
 ### Using Jenkins Job Builder
 
+Let's create a job using jenkins job builder.
+
+
 ```bash
 vagrant@ubuntu-bionic:~$ jenkins-jobs --user admin --password admin update test-pipeline.yml 
 WARNING:jenkins_jobs.config:Config file, /etc/jenkins_jobs/jenkins_jobs.ini, not found. Using default config values.
@@ -76,4 +81,32 @@ INFO:jenkins_jobs.builder:Number of views generated:  0
 INFO:jenkins_jobs.cli.subcommand.update:Number of views updated: 0
 ```
 
+``` | {type: 'terminal'}
+```
+
 ![Pipeline-StageView](imgs/Pipeline-StageView.png)
+
+
+### Triggering a build with node.js
+
+Including with the notebook, are "package.json" and "index.js", which include prototype code for triggering a jenkins build.
+
+Let's install the `jenkins` package.
+
+```bash | {type: 'command'}
+npm install
+```
+
+Open [index.js](index.js) or print it out.
+
+```bash | {type: 'command'}
+cat index.js
+```
+
+Let's try triggering the build job.
+
+```bash | {type: 'command'}
+node index.js
+```
+
+
