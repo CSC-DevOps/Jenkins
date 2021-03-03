@@ -4,7 +4,7 @@
 
 ### Getting a Jenkins ready image.
 
-🚧 Download jenkins image from Github Releases.
+🚧 Download jenkins image from Github Releases. This is a larger download, so be prepared to wait a few minutes. You also may want to run this step in another terminal...
 
 ``` bash | {type: 'command', stream: true}
 bakerx pull jenkins CSC-DevOps/Images#Spring2020 
@@ -12,17 +12,19 @@ bakerx pull jenkins CSC-DevOps/Images#Spring2020
 
 ### Provision jenkins server.
 
-Now that we have an image, let's provision a VM.
+Now that we have an image, let's provision a VM. Note that we are allocating a more memory. Jenkins can 
 
-```bash
-$ bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
+```bash | {type: 'command', stream: true, failed_when: 'exitCode!=0'}
+bakerx run jenkins jenkins --ip 192.168.44.80 --memory 2048
 ```
 
-Get initial admin password.
+Get initial admin password. Using the terminal, get into the VM `baker ssh jenkins`, and run:
 
+``` bash 
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword 
 ```
-$ baker ssh jenkins
-vagrant@ubuntu-bionic:~$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+``` | {type: 'terminal'} 
 ```
 
 ## Exploring Jenkins
