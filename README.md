@@ -84,22 +84,16 @@ instance.save()
 
 4. **Instance configuration.** The last step involves setting up the jenkins url. One common thing to change is the port, because web applications sometimes like to bind to 8080, which jenkins is using! But for this workshop, this default is fine.
 
+## Concepts in Jenkins
+
+```|{type:'slides'}
+https://docs.google.com/presentation/d/e/2PACX-1vSVUG6Vb2koRP-M-nkz7I61_rBXIMVdvFee17fX_m7Tn-fkBEesS3F2AY_PpkSI4S24DknXY4R2oiVR/embed?start=false&loop=false&delayms=3000"
+```
+
+
 ## Exploring Jenkins
 
 ➡️ Visit http://192.168.44.80:8080.
-
-
-
-
-
-### Jenkins > Home Page
-
-![Jenkins](imgs/Jenkins-HomePage.png)
-
-### Jenkins > Project Types
-
-![Projects](imgs/Jenkins-Projects.png)
-
 
 ### Creating a Freestyle Project
 
@@ -123,7 +117,6 @@ Next, on the project home page, manually trigger a build by clicking "Build Now"
 ### Using Jenkins Job Builder
 
 Let's create a job using jenkins job builder.
-
 
 ```bash
 vagrant@ubuntu-bionic:~$ jenkins-jobs --user admin --password admin update test-pipeline.yml 

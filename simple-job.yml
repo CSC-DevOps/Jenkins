@@ -1,0 +1,13 @@
+- job:
+    scm:
+      - git:
+         url: https://github.com/Shreyasc27/Spring-Boot.git
+         branches:
+          - master
+    builders:
+      - maven-target:
+            maven-version: Maven3
+            pom: spring-boot-samples\spring-boot-sample-atmosphere\pom.xml
+            goals: clean compile package install test
+    name: Jenkins-Job-Builder-Blog
+    project-type: freestyle
