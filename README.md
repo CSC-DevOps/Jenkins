@@ -88,7 +88,7 @@ instance.save()
 
 ## Concepts in Jenkins
 
-```|{type:'slides'}
+```|{type:'slides', width: 1280, height: 750}
 https://docs.google.com/presentation/d/e/2PACX-1vSVUG6Vb2koRP-M-nkz7I61_rBXIMVdvFee17fX_m7Tn-fkBEesS3F2AY_PpkSI4S24DknXY4R2oiVR/embed?start=false&loop=false&delayms=3000"
 ```
 
