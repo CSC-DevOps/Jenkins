@@ -2,6 +2,10 @@
 
 In this short workshop, we'll learn about Jenkins, how to configure it, some concepts related to build jobs and the server, and demostrate the process of creating a build job manually, and automatically with `jenkins-job-builder`.
 
+``` | {type: 'youtube'}
+https://www.youtube.com/embed/ZI4FHSlKb5c
+```
+
 ## Setup
 
 ### Before you get started
