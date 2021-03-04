@@ -65,7 +65,7 @@ There are four major items that need to be configured.
 
     When automated this step, one way to do this is to place a groovy file in the Jenkins server at `/var/lib/jenkins/init.groovy.d/basic-security.groovy`.
 
-```grovy
+```grovy | {type: 'info', range: {start: 10,end:10}}
 #!groovy
 
 import jenkins.model.*
