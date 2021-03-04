@@ -1,6 +1,6 @@
 # Jenkins
 
-In this short workshop, we'll learn about Jenkins, 
+In this short workshop, we'll learn about Jenkins, how to configure it, some concepts related to build jobs and the server, and demostrate the process of creating a build job manually, and automatically with `jenkins-job-builder`.
 
 ## Setup
 
@@ -19,6 +19,8 @@ docable-server import https://github.com/CSC-DevOps/Pipelines
 ``` bash | {type: 'command', stream: true}
 bakerx pull jenkins CSC-DevOps/Images#Spring2021
 ```
+
+ℹ️: This image was built using packer! See repository for [more details](https://github.com/CSC-DevOps/Images/tree/master/Jenkins).
 
 ### Provision jenkins server.
 
