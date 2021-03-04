@@ -53,7 +53,7 @@ There are four major items that need to be configured.
 
    When automated this step. You can take advantage of the ansible module for installing plugins:
 
-   ```
+   ```yml
    - name: Install plugins
        jenkins_plugin:
          name: build-pipeline-plugin
