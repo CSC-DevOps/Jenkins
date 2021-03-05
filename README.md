@@ -13,7 +13,7 @@ https://www.youtube.com/embed/ZI4FHSlKb5c
 Import this as a notebook or clone this repo locally. Also, ensure you [install latest version of docable](https://github.com/ottomatica/docable-notebooks/blob/master/docs/install.md)!
 
 ```bash
-docable-server import https://github.com/CSC-DevOps/Pipelines
+docable-server import https://github.com/CSC-DevOps/Jenkins
 ```
 
 ### Getting a Jenkins ready image.
